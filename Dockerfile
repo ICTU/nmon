@@ -9,6 +9,7 @@ RUN apk update && apk add curl && \
     if [ ! $sum == $md5 ]; then exit 1; fi && \
     mkdir /nmon && \
     tar -xvf nmon.tar.gz -C /nmon && \
-    rm nmon.tar.gz
+    rm nmon.tar.gz && \
+    chmod +x /nmon/*
 
 VOLUME "/nmon"
